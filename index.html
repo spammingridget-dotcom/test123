@@ -6,30 +6,32 @@
     <title>Developmentz.site Domains Preview</title>
 
     <style>
-        /* Page Background */
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
-            justify-content: center;
+            justify-content: start;
             align-items: center;
             flex-direction: column;
             background: radial-gradient(circle at 30% 20%, #4f8cff, #1a1f2e);
             background-size: cover;
             font-family: "Inter", Arial, sans-serif;
             color: white;
-            overflow: hidden;
+            overflow-x: hidden; 
+            overflow-y: auto;   
             text-align: center;
+            padding-top: 40px;
         }
 
-        /* Floating circles */
+        /* Background circles */
         .circle {
-            position: absolute;
+            position: fixed;
             border-radius: 50%;
             filter: blur(40px);
             opacity: 0.4;
             animation: float 6s ease-in-out infinite;
+            z-index: -1;
         }
 
         .circle.one {
@@ -80,8 +82,8 @@
         }
 
         .coming {
-            margin-top: 40px;
-            font-size: 2.5rem;
+            margin-top: 30px;
+            font-size: 2.2rem;
             font-weight: bold;
             letter-spacing: 6px;
             animation: pulse 2s infinite;
@@ -95,7 +97,7 @@
 
         /* Button styling */
         .visit-btn {
-            margin-top: 35px;
+            margin-top: 25px;
             padding: 14px 32px;
             font-size: 1.2rem;
             font-weight: 600;
@@ -108,12 +110,36 @@
             backdrop-filter: blur(6px);
             transition: 0.3s ease;
             box-shadow: 0 0 18px rgba(110,150,255,0.4);
+            display: inline-block;
         }
 
         .visit-btn:hover {
             background: rgba(120, 160, 255, 0.35);
             box-shadow: 0 0 25px rgba(150,180,255,0.7);
             transform: translateY(-3px) scale(1.03);
+        }
+
+        /* Game section */
+        .game-container {
+            margin-top: 80px;
+            margin-bottom: 120px;
+        }
+
+        .game-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(150,180,255,0.7);
+        }
+
+        .ball {
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #8fbaff, #4f77ff);
+            border-radius: 50%;
+            box-shadow: 0 0 25px rgba(120,160,255,0.8);
+            position: relative;
+            transition: transform 0.25s ease;
+            cursor: pointer;
         }
     </style>
 
@@ -130,16 +156,33 @@
     <h3>-- developmentz.site domains --</h3>
     <h4>--- made by mopy_ugc and pimwiltaart125 ---</h4>
 
-    <div class="coming">If u want to buy, press the button below!</div>
-    <a class="visit-btn" href="/Explanation.html">
-    Explanation
-</a>
+    <div class="coming">If u want to buy, press the buttons below!</div>
 
+    <a class="visit-btn" href="/Explanation.html">Explanation</a>
 
-    <!-- New Button -->
     <a class="visit-btn" href="https://developmentz.site" target="_blank">
         Visit Developmentz.site
     </a>
+
+    <!-- GAME SECTION -->
+    <div class="game-container">
+        <div class="game-title">Mini Game: Tap the ball!</div>
+        <div class="ball" id="ball"></div>
+    </div>
+
+    <script>
+        const ball = document.getElementById("ball");
+
+        ball.addEventListener("click", () => {
+            const maxX = window.innerWidth - 100;
+            const maxY = window.innerHeight - 200;
+
+            const newX = Math.random() * maxX;
+            const newY = Math.random() * maxY;
+
+            ball.style.transform = `translate(${newX}px, ${newY}px)`;
+        });
+    </script>
 
 </body>
 </html>

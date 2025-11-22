@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon!!</title>
-    <h1>This Is a Example Of How Our Websites work!</h1>
-    <h3>-- developmentz.site domains --</h3>
-    <h4>--- made by mopy_ugc and pimwiltaart125 ---</h4>
+
     <style>
+        /* Page Background */
         body {
             margin: 0;
             padding: 0;
@@ -15,17 +14,104 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #f5f5f5;
-            font-family: Arial, sans-serif;
+            flex-direction: column;
+            background: radial-gradient(circle at 30% 20%, #4f8cff, #1a1f2e);
+            background-size: cover;
+            font-family: "Inter", Arial, sans-serif;
+            color: white;
+            overflow: hidden;
         }
+
+        /* Floating circles */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.4;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .circle.one {
+            width: 180px;
+            height: 180px;
+            background: #4f8cff;
+            top: 10%;
+            left: 15%;
+            animation-duration: 8s;
+        }
+
+        .circle.two {
+            width: 260px;
+            height: 260px;
+            background: #1e5eff;
+            bottom: 5%;
+            right: 10%;
+            animation-duration: 10s;
+        }
+
+        .circle.three {
+            width: 120px;
+            height: 120px;
+            background: #74a9ff;
+            bottom: 20%;
+            left: 40%;
+            animation-duration: 12s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
+
+        /* Main Title */
         h1 {
-            font-size: 3rem;
-            color: #333;
-            letter-spacing: 4px;
+            font-size: 3.5rem;
+            letter-spacing: 3px;
+            margin: 10px 0;
+            text-shadow: 0 0 25px rgba(120,163,255,0.6);
+        }
+
+        /* Subtitles / Info */
+        h3, h4 {
+            margin: 5px 0;
+            opacity: 0.85;
+            font-weight: 400;
+            text-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        /* "COMING SOON" */
+        .coming {
+            margin-top: 40px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 6px;
+            animation: pulse 2s infinite;
+            text-shadow: 0 0 20px rgba(100,150,255,0.8);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(0.97); }
         }
     </style>
+
 </head>
+
 <body>
-    <h1>COMING SOON</h1>
+
+    <!-- Background circles -->
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+    <div class="circle three"></div>
+
+    <!-- Your text from the <head> moved to the page -->
+    <h1>This Is an Example Of How Our Websites Work!</h1>
+    <h3>-- developmentz.site domains --</h3>
+    <h4>--- made by mopy_ugc and pimwiltaart125 ---</h4>
+
+    <!-- Main COMING SOON -->
+    <div class="coming">COMING SOON</div>
+
 </body>
 </html>
+

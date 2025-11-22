@@ -1,1 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Developmentz.site?</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Inter", Arial, sans-serif;
+            color: white;
+            overflow-x: hidden;
+            background: radial-gradient(circle at 30% 20%, #4f8cff, #0b0f1e);
+        }
+
+        /* Floating glowing orbs (space theme) */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.4;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .orb.one { width: 220px; height: 220px; background: #5e85ff; top: 10%; left: 10%; animation-duration: 10s; }
+        .orb.two { width: 300px; height: 300px; background: #1b4ee7; bottom: 5%; right: 15%; animation-duration: 12s; }
+        .orb.three { width: 150px; height: 150px; background: #7ca4ff; bottom: 25%; left: 45%; animation-duration: 14s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
+
+        /* Page Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 30px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 25px rgba(140,170,255,0.7);
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 16px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 0 25px rgba(120,150,255,0.3);
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 28px;
+            font-size: 1.1rem;
+            color: white;
+            border: 2px solid #6fa3ff;
+            border-radius: 12px;
+            text-decoration: none;
+            backdrop-filter: blur(6px);
+            transition: 0.3s;
+        }
+
+        .home-btn:hover {
+            background: rgba(120,150,255,0.3);
+            box-shadow: 0 0 20px rgba(150,180,255,0.6);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Space Background Orbs -->
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+
+    <div class="container">
+        <h1>What is Developmentz.site?</h1>
+
+        <p>
+            <b>Developmentz.site</b> is a free resource for developers, creators,
+            small studios, or anyone who wants a professional-looking website on a budget.
+        </p>
+
+        <div class="card">
+            <p>
+                ✔️ <b>Free subdomain hosting</b>:  
+                Get your own <i>studio.developmentz.site</i> or <i>project.developmentz.site</i>.
+            </p>
+
+            <p>
+                ✔️ <b>Fast hosting through Vercel</b>:  
+                Your site loads extremely fast worldwide.
+            </p>
+
+            <p>
+                ✔️ <b>Perfect for game studios, developers, and personal projects</b>.
+            </p>
+
+            <p>
+                ⚠️ <b>Free plan includes a watermark</b> at the bottom of the site.  
+                This helps keep Developmentz.site free for everyone.
+            </p>
+
+            <p>
+                ⭐ <b>Cheap premium plans</b> remove the watermark  
+                and unlock extra features like custom email, priority DNS setup, and more.
+            </p>
+        </div>
+
+        <a class="home-btn" href="/index.html">⬅ Back to Home</a>
+    </div>
+
+</body>
+</html>
 

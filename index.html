@@ -20,6 +20,7 @@
             font-family: "Inter", Arial, sans-serif;
             color: white;
             overflow: hidden;
+            text-align: center;
         }
 
         /* Floating circles */
@@ -63,7 +64,7 @@
             50% { transform: translateY(-25px); }
         }
 
-        /* Main Title */
+        /* Titles */
         h1 {
             font-size: 3.5rem;
             letter-spacing: 3px;
@@ -71,7 +72,6 @@
             text-shadow: 0 0 25px rgba(120,163,255,0.6);
         }
 
-        /* Subtitles / Info */
         h3, h4 {
             margin: 5px 0;
             opacity: 0.85;
@@ -79,7 +79,6 @@
             text-shadow: 0 0 10px rgba(0,0,0,0.3);
         }
 
-        /* "COMING SOON" */
         .coming {
             margin-top: 40px;
             font-size: 2.5rem;
@@ -93,6 +92,29 @@
             0%, 100% { opacity: 1; transform: scale(1); }
             50% { opacity: 0.6; transform: scale(0.97); }
         }
+
+        /* Button styling */
+        .visit-btn {
+            margin-top: 35px;
+            padding: 14px 32px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            background: rgba(80, 130, 255, 0.25);
+            border: 2px solid #6fa3ff;
+            border-radius: 12px;
+            text-decoration: none;
+            letter-spacing: 1px;
+            backdrop-filter: blur(6px);
+            transition: 0.3s ease;
+            box-shadow: 0 0 18px rgba(110,150,255,0.4);
+        }
+
+        .visit-btn:hover {
+            background: rgba(120, 160, 255, 0.35);
+            box-shadow: 0 0 25px rgba(150,180,255,0.7);
+            transform: translateY(-3px) scale(1.03);
+        }
     </style>
 
 </head>
@@ -104,14 +126,16 @@
     <div class="circle two"></div>
     <div class="circle three"></div>
 
-    <!-- Your text from the <head> moved to the page -->
     <h1>This Is an Example Of How Our Websites Work!</h1>
     <h3>-- developmentz.site domains --</h3>
     <h4>--- made by mopy_ugc and pimwiltaart125 ---</h4>
 
-    <!-- Main COMING SOON -->
     <div class="coming">COMING SOON</div>
+
+    <!-- New Button -->
+    <a class="visit-btn" href="https://developmentz.site" target="_blank">
+        Visit Developmentz.site
+    </a>
 
 </body>
 </html>
-

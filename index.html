@@ -180,17 +180,19 @@ footer{
 <section id="portfolio">
 <h2>Portfolio</h2>
 <div class="portfolio">
-    <div class="video hidden">Placeholder</div>
-    <div class="video hidden">Placeholder</div>
-    <div class="video hidden">Placeholder</div>
+    <div class="video hidden">Placeholder Video 1</div>
+    <div class="video hidden">Placeholder Video 2</div>
+    <div class="video hidden">Placeholder Video 3</div>
+</div>
+    <br>
+    <div class="portfolio">
+    <div class="video hidden">Placeholder Video 4</div>
+    <div class="video hidden">Placeholder Video 5</div>
+    <div class="video hidden">Placeholder Video 6</div>
 </div>
 </section>
 
-<section id="game">
-<h2>Skull Game</h2>
-<div id="game"></div>
-<button id="startGame">Start Game</button>
-</section>
+
 
 <footer>
 <p>© 2026 Alex Portfolio. All rights reserved.</p>
@@ -207,29 +209,6 @@ const observer = new IntersectionObserver(entries=>{
   });
 },{threshold:0.2});
 hiddenElements.forEach(el=>observer.observe(el));
-
-// Skull Game
-const game = document.getElementById('game');
-const startBtn = document.getElementById('startGame');
-
-function randomPos(){
-    return Math.random()*250;
-}
-
-function spawnSkull(){
-    const skull = document.createElement('div');
-    skull.classList.add('skull');
-    skull.style.top = randomPos()+'px';
-    skull.style.left = randomPos()+'px';
-    skull.textContent='💀';
-    skull.addEventListener('click', ()=>skull.remove());
-    game.appendChild(skull);
-}
-
-startBtn.addEventListener('click', ()=>{
-    game.innerHTML='';
-    for(let i=0;i<8;i++) spawnSkull();
-});
 
 </script>
 </body>

@@ -1,188 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developmentz.site Domains Preview</title>
+<meta charset="UTF-8">
+<title>Alex Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            flex-direction: column;
-            background: radial-gradient(circle at 30% 20%, #4f8cff, #1a1f2e);
-            background-size: cover;
-            font-family: "Inter", Arial, sans-serif;
-            color: white;
-            overflow-x: hidden; 
-            overflow-y: auto;   
-            text-align: center;
-            padding-top: 40px;
-        }
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0f0f0f;
+    color:#e5e5e5;
+    overflow-x:hidden;
+    animation:fadeIn 1.2s ease;
+}
 
-        /* Background circles */
-        .circle {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(40px);
-            opacity: 0.4;
-            animation: float 6s ease-in-out infinite;
-            z-index: -1;
-        }
+/* ENTER ANIMATION */
+@keyframes fadeIn{
+    from{opacity:0; transform:scale(0.98);}
+    to{opacity:1; transform:scale(1);}
+}
 
-        .circle.one {
-            width: 180px;
-            height: 180px;
-            background: #4f8cff;
-            top: 10%;
-            left: 15%;
-            animation-duration: 8s;
-        }
+/* NAVBAR */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:#111;
+    padding:15px;
+    border-bottom:2px solid #00ff88;
+    z-index:999;
+}
+nav a{
+    color:#8affb0;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+nav a:hover{
+    color:#00ff88;
+    text-shadow:0 0 10px #00ff88;
+}
 
-        .circle.two {
-            width: 260px;
-            height: 260px;
-            background: #1e5eff;
-            bottom: 5%;
-            right: 10%;
-            animation-duration: 10s;
-        }
+/* HEADER */
+header{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+}
+header h1{
+    font-size:70px;
+    color:#00ff88;
+    text-shadow:0 0 20px #00ff88;
+    animation:float 3s infinite ease-in-out;
+}
+@keyframes float{
+    0%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+    100%{transform:translateY(0)}
+}
 
-        .circle.three {
-            width: 120px;
-            height: 120px;
-            background: #74a9ff;
-            bottom: 20%;
-            left: 40%;
-            animation-duration: 12s;
-        }
+/* SECTIONS */
+section{
+    padding:80px 10%;
+}
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-25px); }
-        }
+/* PORTFOLIO */
+.portfolio{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
 
-        /* Titles */
-        h1 {
-            font-size: 3.5rem;
-            letter-spacing: 3px;
-            margin: 10px 0;
-            text-shadow: 0 0 25px rgba(120,163,255,0.6);
-        }
+/* VIDEO PLACEHOLDER */
+.video{
+    background:white;
+    aspect-ratio:16/9;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:black;
+    font-weight:bold;
+    font-size:22px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+    position:relative;
+    overflow:hidden;
+}
+.video:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px #00ff88;
+}
+.video:active{
+    transform:scale(.95);
+}
 
-        h3, h4 {
-            margin: 5px 0;
-            opacity: 0.85;
-            font-weight: 400;
-            text-shadow: 0 0 10px rgba(0,0,0,0.3);
-        }
+/* SCROLL ANIMATION */
+.hidden{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 1s;
+}
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
 
-        .coming {
-            margin-top: 30px;
-            font-size: 2.2rem;
-            font-weight: bold;
-            letter-spacing: 6px;
-            animation: pulse 2s infinite;
-            text-shadow: 0 0 20px rgba(100,150,255,0.8);
-        }
+/* BUTTON */
+button{
+    padding:12px 25px;
+    border:none;
+    background:#00ff88;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:6px;
+    transition:.3s;
+}
+button:hover{
+    background:#00cc6a;
+    transform:scale(1.1);
+}
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(0.97); }
-        }
+/* MINI-GAME */
+#game{
+    background:#111;
+    border:2px solid #00ff88;
+    height:300px;
+    position:relative;
+    overflow:hidden;
+    margin-top:30px;
+}
 
-        /* Button styling */
-        .visit-btn {
-            margin-top: 25px;
-            padding: 14px 32px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: white;
-            background: rgba(80, 130, 255, 0.25);
-            border: 2px solid #6fa3ff;
-            border-radius: 12px;
-            text-decoration: none;
-            letter-spacing: 1px;
-            backdrop-filter: blur(6px);
-            transition: 0.3s ease;
-            box-shadow: 0 0 18px rgba(110,150,255,0.4);
-            display: inline-block;
-        }
+.creeper{
+    width:50px;
+    height:50px;
+    background:#00ff88;
+    position:absolute;
+    border-radius:5px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
 
-        .visit-btn:hover {
-            background: rgba(120, 160, 255, 0.35);
-            box-shadow: 0 0 25px rgba(150,180,255,0.7);
-            transform: translateY(-3px) scale(1.03);
-        }
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px;
+    background:#111;
+    margin-top:50px;
+}
 
-        /* Game section */
-        .game-container {
-            margin-top: 80px;
-            margin-bottom: 120px;
-        }
-
-        .game-title {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            text-shadow: 0 0 20px rgba(150,180,255,0.7);
-        }
-
-        .ball {
-            width: 80px;
-            height: 80px;
-            background: radial-gradient(circle, #8fbaff, #4f77ff);
-            border-radius: 50%;
-            box-shadow: 0 0 25px rgba(120,160,255,0.8);
-            position: relative;
-            transition: transform 0.25s ease;
-            cursor: pointer;
-        }
-    </style>
-
+</style>
 </head>
 
 <body>
 
-    <!-- Background circles -->
-    <div class="circle one"></div>
-    <div class="circle two"></div>
-    <div class="circle three"></div>
+<nav>
+<a href="#home">Home</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#game-section">Mini-game</a>
+</nav>
 
-    <h1>This Is an Example Of How Our Websites Work!</h1>
-    <h3>-- developmentz.site domains --</h3>
-    <h4>--- made by mopy_ugc and pimwiltaart125 ---</h4>
+<header id="home">
+<h1>Alex</h1>
+<p>Minecraft Themed Portfolio</p>
+</header>
 
-    <div class="coming">If u want to buy, press the buttons below!</div>
+<section id="portfolio">
+<h2>Portfolio</h2>
+<div class="portfolio">
+    <div class="video hidden">Placeholder</div>
+    <div class="video hidden">Placeholder</div>
+    <div class="video hidden">Placeholder</div>
+</div>
+</section>
 
-    <a class="visit-btn" href="/Explanation.html">Explanation</a>
+<section id="game-section">
+<h2>Mini-Game: Click the Creeper!</h2>
+<p>Click the green creeper as fast as you can!</p>
+<div id="game"></div>
+<p>Score: <span id="score">0</span></p>
+<button id="startGame">Start Game</button>
+</section>
 
-    <a class="visit-btn" href="https://developmentz.site" target="_blank">
-        Visit Developmentz.site
-    </a>
+<footer>
+<p>&copy; 2026 Alex Portfolio</p>
+</footer>
 
-    <!-- GAME SECTION -->
-    <div class="game-container">
-        <div class="game-title">Mini Game: Tap the ball!</div>
-        <div class="ball" id="ball"></div>
-    </div>
+<script>
+// Scroll animation
+const hiddenElements = document.querySelectorAll('.hidden');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+hiddenElements.forEach(el => observer.observe(el));
 
-    <script>
-        const ball = document.getElementById("ball");
+// Mini-game logic
+const game = document.getElementById('game');
+const scoreDisplay = document.getElementById('score');
+const startBtn = document.getElementById('startGame');
+let score = 0;
+let interval;
 
-        ball.addEventListener("click", () => {
-            const maxX = window.innerWidth - 100;
-            const maxY = window.innerHeight - 200;
+startBtn.addEventListener('click', () => {
+    game.innerHTML = '';
+    score = 0;
+    scoreDisplay.textContent = score;
 
-            const newX = Math.random() * maxX;
-            const newY = Math.random() * maxY;
+    interval = setInterval(() => {
+        const creeper = document.createElement('div');
+        creeper.classList.add('creeper');
+        creeper.style.top = Math.random() * (game.clientHeight - 50) + 'px';
+        creeper.style.left = Math.random() * (game.clientWidth - 50) + 'px';
+        creeper.textContent = "💀";
 
-            ball.style.transform = `translate(${newX}px, ${newY}px)`;
+        creeper.addEventListener('click', () => {
+            score++;
+            scoreDisplay.textContent = score;
+            creeper.remove();
         });
-    </script>
+
+        game.appendChild(creeper);
+
+        setTimeout(() => {
+            if(creeper.parentNode) creeper.remove();
+        }, 1500);
+
+    }, 1000);
+
+    setTimeout(() => {
+        clearInterval(interval);
+        alert('Game Over! Your score: ' + score);
+    }, 20000); // 20 seconds game
+});
+</script>
 
 </body>
 </html>
